@@ -2,7 +2,6 @@ package demo.controller;
 
 import demo.Dtos.DtoPedido;
 import demo.Service.RegistrarPedidos;
-import demo.mapper.PedidosMapper;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,5 +17,4 @@ public class controllerPedidos {
     public void ResgistroPedido(@Valid @RequestBody DtoPedido.Request dto){
         pedidosService.RegistarPedido(dto);
     }
-
 }

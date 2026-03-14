@@ -1,5 +1,6 @@
 package demo.Service;
 
+import demo.Dtos.DtoPedido;
 import demo.domain.ItensPedidos;
 import demo.domain.Pedidos;
 import demo.Repository.pedidosRepository;

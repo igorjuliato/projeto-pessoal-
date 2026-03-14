@@ -14,7 +14,7 @@ public class ItensPedidos {
     private Integer quantidade;
 
     @ManyToOne
-    @JoinColumn(name = "pedidos_id")
+    @JoinColumn(name = "pedidos_id", nullable = false)
     private Pedidos pedidos;
 
     public ItensPedidos(){}
@@ -50,8 +50,4 @@ public class ItensPedidos {
     public void setPedidos(Pedidos pedidos) {
         this.pedidos = pedidos;
     }
-
-    @ManyToOne(optional = false)
-    private Pedidos pedidos2;
-
 }

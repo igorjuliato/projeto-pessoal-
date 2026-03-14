@@ -1,7 +1,7 @@
 package demo.controller;
 
 import demo.Dtos.DtoBuscarPedido;
-import demo.Service.areaFabricanteService;
+import demo.Service.calcularPedido;
 import infra.execepitionsPedidos;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("paraFabricante")
 public class ControllerAreaFabricante {
 
-    private areaFabricanteService fabricante;
+    private calcularPedido fabricante;
 
     @GetMapping
     public void calcularValorDeCompra(DtoBuscarPedido dto){

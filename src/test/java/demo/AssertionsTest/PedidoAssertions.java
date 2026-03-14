@@ -21,14 +21,14 @@ public class PedidoAssertions {
         return new PedidoAssertions(atual);
     }
      public void FoiConvertido_DtoPedido (){
-         Assertions.assertEquals("igor", dados.getCliente());
+         Assertions.assertEquals("igor", atual.getCliente());
          List<DtoItensPedidos> esperado = List.of(
-                 new DtoItensPedidos(1,3, null),
-                 new DtoItensPedidos(2, 10, null),
-                 new DtoItensPedidos(3, 6, null)
+                 new DtoItensPedidos(1,3),
+                 new DtoItensPedidos(2, 10),
+                 new DtoItensPedidos(3, 6)
          );
-         Assertions.assertEquals(esperado, dados.getListPedido());
-         Assertions.assertEquals(LocalDate.of(2026, 02, 20) ,dados.getDataPedido());
-         Assertions.assertEquals("bougainville",dados.getLocalPedido());
+         Assertions.assertEquals(esperado, atual.getListPedido());
+         Assertions.assertEquals(LocalDate.of(2026, 02, 20) , atual.getDataPedido());
+         Assertions.assertEquals("bougainville", atual.getLocalPedido());
      }
 }

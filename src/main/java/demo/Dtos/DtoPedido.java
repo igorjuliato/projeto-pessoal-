@@ -1,19 +1,18 @@
-import demo.Dtos.DtoItensPedidos;
+package demo.Dtos;
 import jakarta.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.List;
 
-public class DtoPedido {
+@Data
+public class DtoPedido{
 
     @Builder
     @Getter
     @AllArgsConstructor
     @NoArgsConstructor
+    @Data
     public static class Request {
 
         @NotNull

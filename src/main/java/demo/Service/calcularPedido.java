@@ -10,11 +10,11 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 @Service
-public class areaFabricanteService {
+public class calcularPedido {
 
     private final pedidosRepository repository;
 
-    public areaFabricanteService(pedidosRepository repository) {
+    public calcularPedido(pedidosRepository repository) {
         this.repository = repository;
     }
 

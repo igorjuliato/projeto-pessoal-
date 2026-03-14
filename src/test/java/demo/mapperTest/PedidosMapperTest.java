@@ -1,5 +1,6 @@
 package demo.mapperTest;
 
+import demo.AssertionsTest.PedidoAssertions;
 import demo.DtoFactory.PedidoDtoFactory;
 import demo.Dtos.DtoItensPedidos;
 
@@ -35,15 +36,7 @@ class PedidosMapperTest {
                 //ACT
                 var atual = mapperPedidos.converter(dto);
                 //ASSERT
-                Assertions.assertEquals("igor",dto.getNomeCliente());
-                List<DtoItensPedidos> esperado = List.of(
-                        new DtoItensPedidos(1,3, null),
-                        new DtoItensPedidos(2, 10, null),
-                        new DtoItensPedidos(3, 6, null)
-                );
-                Assertions.assertEquals(esperado, dto.getItens());
-                Assertions.assertEquals(LocalDate.of(2026, 02, 20) ,dto.getDataDoPedido());
-                Assertions.assertEquals("bougainville",dto.getLocalPedido());
+                PedidoAssertions.afrimaQue_Pedido(atual).FoiConvertido_DtoPedido();
             }
             }
         }
