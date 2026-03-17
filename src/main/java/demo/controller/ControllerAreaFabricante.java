@@ -1,25 +1,23 @@
 package demo.controller;
 
 import demo.Dtos.DtoBuscarPedido;
-import demo.Service.calcularPedido;
+import demo.Service.CalcularPedido;
 import infra.execepitionsPedidos;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.math.BigDecimal;
 
 @RestController
 @RequestMapping("paraFabricante")
 public class ControllerAreaFabricante {
 
-    private calcularPedido fabricante;
+    private CalcularPedido calcular;
 
-    @GetMapping
-    public void calcularValorDeCompra(DtoBuscarPedido dto){
-        fabricante.calcularprecoDeCompra(dto);
-    }
-
-    @ExceptionHandler(execepitionsPedidos.class)
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    public String handleResourceNotFound(execepitionsPedidos ex) {
-        return ex.getMessage();
+    @GetMapping("/{id}/total")
+    public ResponseEntity<BigDecimal> calcularValorDeCompra(DtoBuscarPedido.Request dto){
+        BigDecimal valorTotal = calcular.calcularPrecoDeCompra(dto);
+        return ResponseEntity.ok(valorTotal);
     }
 }
