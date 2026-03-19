@@ -20,4 +20,7 @@ public class ControllerAreaFabricante {
         BigDecimal valorTotal = calcular.calcularPrecoDeCompra(dto);
         return ResponseEntity.ok(valorTotal);
     }
+
+    @PostMapping
+    public ResponseEntity<String>
 }
