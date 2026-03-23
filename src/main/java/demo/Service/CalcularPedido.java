@@ -5,7 +5,7 @@ import demo.Repository.PedidosRepository;
 import demo.controller.ControllerAreaFabricante;
 import demo.domain.ItensPedidos;
 import demo.domain.Pedidos;
-import infra.execepitionsPedidoNaoEncontrado;
+import infra.ExecepitionsPedidoNaoEncontrado;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -30,7 +30,7 @@ public class CalcularPedido {
     @Transactional
     public BigDecimal calcularPrecoDeCompra(DtoBuscarPedido.Request dto) {
         Optional<Pedidos> BuscaPedido = Optional.of(repository.findById(dto.getId())
-                .orElseThrow(() -> new execepitionsPedidoNaoEncontrado("seu Pedido não esta sendo achado")));
+                .orElseThrow(() -> new ExecepitionsPedidoNaoEncontrado("seu Pedido não esta sendo achado")));
 
         BuscaPedido.isPresent();
             Pedidos pedido = BuscaPedido.get();

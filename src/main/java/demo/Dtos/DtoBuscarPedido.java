@@ -13,7 +13,6 @@ import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 public class DtoBuscarPedido{
 
         @Builder
-        @Getter
         @AllArgsConstructor
         @NoArgsConstructor
         @Data

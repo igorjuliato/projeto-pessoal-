@@ -9,7 +9,6 @@ import java.util.List;
 public class DtoPedido{
 
     @Builder
-    @Getter
     @AllArgsConstructor
     @NoArgsConstructor
     @Data

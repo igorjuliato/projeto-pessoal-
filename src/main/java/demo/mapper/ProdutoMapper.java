@@ -1,6 +1,6 @@
 package demo.mapper;
 
-import demo.Dtos.DtoAtualizar;
+import demo.Dtos.DtoAtualizarECriar;
 import demo.domain.Produto;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
@@ -9,7 +9,7 @@ import static org.mapstruct.NullValuePropertyMappingStrategy.IGNORE;
 
 @Mapper(componentModel = "spring", nullValuePropertyMappingStrategy = IGNORE)
 public interface ProdutoMapper {
-    Produto converter(DtoAtualizar.Request dto);
+    Produto converter(DtoAtualizarECriar.Request dto);
 
-    void atualizar(DtoAtualizar.Request dto , @MappingTarget Produto produto);
+    void atualizar(DtoAtualizarECriar.Request dto , @MappingTarget Produto produto);
 }
