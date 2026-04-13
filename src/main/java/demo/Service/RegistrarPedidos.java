@@ -36,8 +36,10 @@ public class RegistrarPedidos {
                 "no item: " + dto.getItens().get(0).idProduto() + " deve ter pelo menos um produto");}
 
         validaçãoLocal.NaoEntregaNoLocal(dto);
+        System.out.println("entrou na validação");
 
             Pedidos pedidos = mapperPedido.converter(dto);
+        System.out.println("entrou no mapper");
 
             List<ItensPedidos> listaDePedidos = dto.getItens().stream().
                     map(i -> {
@@ -50,6 +52,7 @@ public class RegistrarPedidos {
             pedidos.setListPedido(listaDePedidos);
 
             repository.save(pedidos);
+        System.out.println("entrou no repository");
             return "seu pedido foi feito";
     }
 }
